@@ -22,7 +22,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :path => "bootstrap.sh"
   config.vm.provision :shell, :path => "build_redis.sh"
   config.vm.provision :shell, :path => "install_redis.sh"
-  config.vm.provision :file, :source => ".bash_profile", :destination => "/home/vagrant/.bash_profile"
 
 
   # setup forwarded ports

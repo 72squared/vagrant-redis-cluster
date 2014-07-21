@@ -6,6 +6,17 @@ source /vagrant/redis_vars.sh
 rm -rf $REDIS_SUPERVISOR_CONF
 supervisorctl update
 
+rm -rf $REDIS_DIR
+
+mkdir -p $REDIS_DIR
+
+for port in $REDIS_PORTS
+do
+    mkdir -p $REDIS_DIR/$port
+done
+
+
+
 
 for port in $REDIS_PORTS
 do
@@ -15,7 +26,7 @@ echo "======================================"
 
 supervisor_conf=$(cat <<EOF
 [program:redis-$port]
-command = $REDIS_DIR/bin/redis-server $REDIS_DIR/redis.conf --port $port --dir $REDIS_DIR/$port --cluster-enabled yes
+command = /usr/local/bin/redis-server /etc/redis.conf --port $port --dir $REDIS_DIR/$port --cluster-enabled yes
 autostart = true
 autorestart = true
 stdout_logfile = syslog
@@ -46,4 +57,4 @@ do
     redis_host_list="$redis_host_list 127.0.0.1:$port "
 done
 
-yes "yes" | $REDIS_DIR/bin/redis-trib.rb create --replicas 1 $redis_host_list
+yes "yes" | /usr/local/bin/redis-trib.rb create --replicas 1 $redis_host_list
