@@ -1,7 +1,7 @@
 vagrant-redis-cluster
 =====================
 
-** A Vagrant image that will install redis from source and start a redis cluster. **
+*Configures a redis cluster in vagrant*
 
 The cluster is 6 redis instances running with 3 master & 3 slaves, one slave for each master.
 
