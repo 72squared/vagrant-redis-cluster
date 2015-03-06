@@ -1,4 +1,4 @@
-vagrant-redis-cluster
+Vagrant Redis Cluster
 =====================
 
 *Configures a redis cluster in vagrant*
@@ -12,8 +12,8 @@ When redis 3.0 will be stable and released this repo will update to use master b
 ## Setup
 How to set up vagrant and start the cluster image.
 
-* Install vagrant on your system (Instructions can be found at: http://www.vagrantup.com/)
+* Install [vagrant](http://www.vagrantup.com/) on your system
 * Navigate to root of this project
 * Install the **vbguest** plugin: `vagrant plugin install vagrant-vbguest`
-* Run 'vagrant up'
-* Test the connection by running either 'redis-cli -p 7000' (or any other cluster port)
+* Run `vagrant up`
+* Test the connection by running either `redis-cli -p 7000` (or any other cluster port)
