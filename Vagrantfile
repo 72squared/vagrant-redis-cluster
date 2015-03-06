@@ -8,6 +8,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # ubuntu 64bit image
   config.vm.box = "ubuntu-trusty"
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+
+  # enable guest auto updates
+  unless Vagrant.has_plugin?("vagrant-vbguest")
+    raise 'vagrant-vbguest is not installed! run: "vagrant plugin install vagrant-vbguest"'
+  end
   config.vbguest.auto_update = true
   
   config.vm.provider :virtualbox do |vb|
