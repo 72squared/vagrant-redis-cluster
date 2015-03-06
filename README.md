@@ -14,8 +14,8 @@ How to set up vagrant and start the cluster image.
 
 1. Install [vagrant](http://www.vagrantup.com/)
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-1. `git clone git@github.com:Kevinlearynet/vagrant-redis-cluster.git ~/redis/` clones this repo locally
-1. `cd ~/redis/` moves into the project directory 
-1. `vagrant plugin install vagrant-vbguest` installs the *vbguest1. plugin for Vagrant
-1. `vagrant up` provisions the virtual machine using Vagrant, this may take some time initially
-1. `redis-cli -p 7000` (or any other cluster port) tests the connection to verify everything is working
+1. Clone the project locally: `git clone git@github.com:Kevinlearynet/vagrant-redis-cluster.git ~/redis/`
+1. Move into the project directory: `cd ~/redis/`  
+1. Install the *vbguest1* plugin: `vagrant plugin install vagrant-vbguest` 
+1. Provision the virtual machine using Vagrant: `vagrant up`
+1. Test the connection to verify everything is working: `redis-cli -p 7000` (or any other cluster port)
