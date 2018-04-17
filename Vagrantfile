@@ -6,8 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # ubuntu 64bit image
-  config.vm.box = "ubuntu-trusty"
-  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box = "ubuntu/xenial64"
 
   # enable guest auto updates
   unless Vagrant.has_plugin?("vagrant-vbguest")
